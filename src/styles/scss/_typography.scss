@@ -1,0 +1,9 @@
+.title-1 { @include type-setting(5)}
+.title-2 { @include type-setting(4)}
+.title-3 { @include type-setting(3)}
+.title-4 { @include type-setting(2)}
+.title-5 { @include type-setting(1)}
+.title-6 { @include type-setting(0)}
+.body-copy { @include type-setting(0, 1.35)}
+
+.test { height: px-rem(160px)};

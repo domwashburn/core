@@ -1,0 +1,54 @@
+// Made better with some tips from here: https://scotch.io/tutorials/aesthetic-sass-3-typography-and-vertical-rhythm
+// determine rem value for functions
+$base-font-size: 16px;
+$base-line-height: 1.35;
+// rem Function
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function px-rem($val: 16, $unit: rem) {
+      @return strip-unit(($val/$base-font-size)) + $unit;
+}
+
+$__type-scale: (
+	5: px-rem(50px),
+	4: px-rem(45px),
+	3: px-rem(30px),
+	2: px-rem(25px),
+	1: px-rem(20px),
+	0: px-rem(16px),
+	-1: px-rem(14px),
+	-2: px-rem(12px)
+);
+$__line-heights: (
+	-2: $base-line-height + rem,
+	-1: $base-line-height + rem,
+	0: $base-line-height + rem,
+	1: $base-line-height + rem,
+	2: $base-line-height + rem,
+	3: $base-line-height + rem,
+	4: $base-line-height + rem,
+	5: $base-line-height + rem
+);
+
+// Type Scale and Vertical Rhythm
+@function type-scale($level) {
+    @return map-get($__type-scale, $level);
+}
+
+@function line-height($level) {
+    @return map-get($__line-heights, $level);
+}
+
+// Move this mixin to a _mixins.scss file -or- _typography.scss
+@mixin type-setting($level: 0, $line-height: 1) {
+  font-size: type-scale($level);
+  line-height: $line-height;
+  margin-top: 0;
+  margin-bottom: line-height($level);
+}

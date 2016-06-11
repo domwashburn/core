@@ -1,0 +1,9 @@
+.DS_Store
+node_modules
+bower_components
+npm-debug.log
+
+# all folders containing compiled and minifided versions of SRC and node_modules, no need to track these.
+static
+gh-pages
+dist
