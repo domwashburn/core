@@ -9,6 +9,29 @@
     <div id='root'>
       <h1 class="title-1">Core</h1>
       <p class="title-3">hello core!</p>
+      <section>
+        <div class="code">
+          <nav class="tab-nav--inline">
+            <ul role="navigation" class="tab-nav__list">
+              <li role="navigation-item" class="tab-nav__item">
+                <a href="#" class="tab-nav__link">CSS</a>
+              </li>
+              <li role="navigation-item" class="tab-nav__item">
+                <a href="#" class="tab-nav__link">SASS</a>
+              </li>
+            </ul>
+          </nav>
+          <code class="tab-content">
+            .title-1 { @include type-setting(5)}
+            .title-2 { @include type-setting(4)}
+            .title-3 { @include type-setting(3)}
+            .title-4 { @include type-setting(2)}
+            .title-5 { @include type-setting(1)}
+            .title-6 { @include type-setting(0)}
+            .body-copy { @include type-setting(0, 1.35)}
+          </code>
+        </div>
+      </section>
     </div>
     <script src="/static/scripts/bundle.js"></script>
   </body>
