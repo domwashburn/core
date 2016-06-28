@@ -13,27 +13,30 @@ The BEM methodology, while verbose, is intended to be quickly readable by a deve
 
 You'll find that I make use of a SASS capability `@at-root`. This aids in writing a DRY sass file that renders flat and intentionally cascading CSS. It takes the rule defined after it and renders it as if it were top level of your SASS file
 
-*example* 
-```
+*example*
+
+~~~scss
   .foo {
     &--bar1 {
       color: #BADA55;
     }
-    @at-root &--bar2 {
+    @at-root &--bar-2 {
       color: #BADA55;
     }
   }
-```
+~~~
+
 *would compile to*
-```
+
+~~~scss
   .foo .foo--bar1 {
       color: #BADA55;
     }
     
-  .foo--bar2 {
+  .foo--bar-2 {
       color: #BADA55;
     }
-```
+~~~
 
 ## CORE typography:
 
